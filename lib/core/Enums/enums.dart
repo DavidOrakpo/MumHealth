@@ -13,7 +13,7 @@ enum OnboardingStates {
       Color(0xFFE9EEFB),
     ],
     subTitle:
-        "Now you can understand a lot about your new born, bukkle up for an experience you will always long for.",
+        "Now you can understand a lot about your new born, buckle up for an experience you will always long for.",
   ),
   SecondState(
     onboardingImage: "assets/images/baby_two_onboard.png",
