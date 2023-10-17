@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:template/presentation/styles/app_colors.dart';
 import 'package:template/presentation/styles/text_styles.dart';
@@ -6,41 +7,11 @@ import 'package:template/presentation/styles/text_styles.dart';
 class Styles {
   static ThemeData themeData(bool isDarkTheme, BuildContext context) {
     return ThemeData(
-      textTheme: GoogleFonts.mulishTextTheme(
+      textTheme: GoogleFonts.interTextTheme(
         Theme.of(context).textTheme.apply(
               bodyColor: isDarkTheme ? AppColors.white : AppColors.black,
               displayColor: isDarkTheme ? AppColors.white : AppColors.black,
-            )
-
-        // .copyWith(
-
-        //       // headline1: AppTextStyle.headerOne.copyWith(
-        //       //   color: isDarkTheme ? AppColors.white : AppColors.black,
-        //       // ),
-        //       // headline2: AppTextStyle.headerTwo.copyWith(
-        //       //   color: isDarkTheme ? AppColors.white : AppColors.black,
-        //       // ),
-        //       // headline3: AppTextStyle.headerThree.copyWith(
-        //       //   color: isDarkTheme ? AppColors.white : AppColors.black,
-        //       // ),
-        //       // headline4: AppTextStyle.headerFour.copyWith(
-        //       //   color: isDarkTheme ? AppColors.white : AppColors.black,
-        //       // ),
-        //       // headline5: AppTextStyle.headerFive.copyWith(
-        //       //   color: isDarkTheme ? AppColors.white : AppColors.black,
-        //       // ),
-        //       // bodyText1: AppTextStyle.bodyOne.copyWith(
-        //       //   color: isDarkTheme ? AppColors.white : AppColors.black,
-        //       // ),
-        //       // bodyText2: AppTextStyle.bodyTwo.copyWith(
-        //       //   color: isDarkTheme ? AppColors.white : AppColors.black,
-        //       // ),
-        //       // bodySmall: AppTextStyle.bodyThree.copyWith(
-        //       //   color: isDarkTheme ? AppColors.white : AppColors.black,
-        //       // ),
-
-        //     ),
-        ,
+            ),
       ),
       //!Scaffold background color
       scaffoldBackgroundColor: isDarkTheme ? AppColors.black : AppColors.white,
@@ -52,17 +23,58 @@ class Styles {
             return AppColors.white;
           }),
           fillColor:
-              MaterialStateProperty.resolveWith((states) => AppColors.purple)),
+              MaterialStateProperty.resolveWith((states) => AppColors.primary)),
       //!Floating Action Button Theme
       floatingActionButtonTheme: const FloatingActionButtonThemeData(
           elevation: 10,
           iconSize: 35,
-          splashColor: AppColors.purple,
-          backgroundColor: AppColors.purple,
+          splashColor: AppColors.primary,
+          backgroundColor: AppColors.primary,
           sizeConstraints: BoxConstraints(
             minHeight: 60,
             minWidth: 60,
           )),
+
+      //! Elevated Button Theme
+      elevatedButtonTheme: ElevatedButtonThemeData(
+        style: ButtonStyle(
+          shape: MaterialStateProperty.all(
+            RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(4),
+            ),
+          ),
+          padding: MaterialStateProperty.all(
+            const EdgeInsets.symmetric(
+              horizontal: 45,
+              vertical: 17,
+            ),
+          ),
+          backgroundColor: MaterialStateProperty.resolveWith(
+            (states) {
+              if (states.contains(MaterialState.disabled)) {
+                return isDarkTheme
+                    ? const Color(0x0FE0E4E9)
+                    : const Color(0xFFE0E4E9);
+              }
+              if (states.contains(MaterialState.pressed)) {
+                return isDarkTheme
+                    ? const Color(0x0FE0E4E9)
+                    : const Color(0xFFE0E4E9);
+              }
+              return AppColors.primary.shade100;
+            },
+          ),
+          foregroundColor: MaterialStateProperty.resolveWith(
+            (states) {
+              if (states.contains(MaterialState.disabled)) {
+                return AppColors.white;
+              }
+              return AppColors.white;
+            },
+          ),
+          shadowColor: MaterialStateProperty.all(Colors.transparent),
+        ),
+      ),
 
       //! Input Decoration Theme
       inputDecorationTheme: InputDecorationTheme(
@@ -136,9 +148,18 @@ class Styles {
 
       //!App Bar Theme
       appBarTheme: AppBarTheme(
-          elevation: 0.0,
-          iconTheme: IconThemeData(
-              color: isDarkTheme ? AppColors.white : AppColors.black)),
+        systemOverlayStyle: SystemUiOverlayStyle(
+          // Status bar color
+          statusBarColor: isDarkTheme ? Colors.transparent : Colors.transparent,
+          statusBarIconBrightness:
+              isDarkTheme ? Brightness.light : Brightness.dark,
+          systemNavigationBarColor: isDarkTheme ? Colors.black : Colors.white,
+          statusBarBrightness: isDarkTheme ? Brightness.dark : Brightness.light,
+        ),
+        elevation: 0.0,
+        iconTheme: IconThemeData(
+            color: isDarkTheme ? AppColors.white : AppColors.black),
+      ),
       colorScheme: ColorScheme.fromSeed(
         seedColor: AppColors.primary,
         // secondary: AppColors.purple,

@@ -6,7 +6,7 @@ class AppTextStyle {
       fontWeight: FontWeight.w700, fontSize: 42, height: 71 / 42);
 
   static TextStyle get headerTwo => const TextStyle(
-      fontWeight: FontWeight.w800, fontSize: 28, height: 42 / 28);
+      fontWeight: FontWeight.w700, fontSize: 22, height: 28 / 22);
 
   static TextStyle get headerThree => const TextStyle(
       fontWeight: FontWeight.w800, fontSize: 24, height: 40.8 / 24);
@@ -24,7 +24,7 @@ class AppTextStyle {
       fontWeight: FontWeight.w700, fontSize: 14, height: 14 / 14);
 
   static TextStyle get bodyThree => const TextStyle(
-      fontWeight: FontWeight.w400, fontSize: 14, height: 21 / 14);
+      fontWeight: FontWeight.w500, fontSize: 13, height: 21 / 13);
 
   static TextStyle get bodyFour => const TextStyle(
       fontWeight: FontWeight.w600, fontSize: 12, height: 13 / 12);

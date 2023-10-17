@@ -203,7 +203,7 @@ class Constants {
                           textAlign: TextAlign.center,
                           style: AppTextStyle.headerFive.copyWith(
                             fontSize: 14,
-                            color: AppColors.purple,
+                            color: AppColors.primary,
                           ),
                         ),
                       )
@@ -248,7 +248,6 @@ class Constants {
   // }
 
   ///pass color code in this format #F345DE
-
 }
 
 //!EXTENSIONS

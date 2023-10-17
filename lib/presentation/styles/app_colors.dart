@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class AppColors {
   // static const Color darkShade = Color(0xFFF5F5F5);
   static const Color white = Color(0xFFFFFFFF);
-  static const Color primary = Color(0xFF6956E5);
+
   static const Color textGray = Color(0xFF979797);
   static const Color progressIndicatorBackgroundDark = Color(0xFF333333);
   static const Color black = Color(0xFF000000);
@@ -13,30 +13,35 @@ class AppColors {
   static const defaultContainerColor = Color(0xFFF6F6F6);
   static const Color warning = Color(0xFFE2B93B);
 
-  static const purple = MaterialColor(
-    0xFF6956E5,
+  static const primary = MaterialColor(
+    0xFF4476F6,
     {
-      100: Color(0xFFFFFFFF),
-      200: Color(0xFFF0EEFC),
-      300: Color(0xFFE1DDFA),
-      400: Color(0xFFD2CCF7),
-      500: Color(0xFFC3BBF5),
-      600: Color(0xFFA59AEF),
-      700: Color(0xFF8778EA),
-      800: primary,
+      100: Color(0xFFA7C0FF),
+      200: Color(0xFF7096F8),
+      300: Color(0xFF4476F6),
+      400: Color(0xFF1C419E),
+      500: Color(0xFF0D2D80),
     },
   );
 
+  // static const primary = MaterialColor(
+  //   0xFFFFB300,
+  //   {
+  //     100: Color(0xFFFCF3DD),
+  //     200: Color(0xFFFEE6AF),
+  //     300: Color(0xFFFFC847),
+  //     400: Color(0xFFFFB300),
+  //     500: Color(0xFF8A6103),
+  //   },
+  // );
   static const accent = MaterialColor(
-    0xFF040311,
+    0xFFFFB300,
     {
-      100: Color(0xFF5545BB),
-      200: Color(0xFF413590),
-      400: Color(0xFF2C2466),
-      500: Color(0xFF221C51),
-      600: Color(0xFF18143B),
-      800: Color(0xFF0E0B26),
-      900: Color(0xFF040311),
+      100: Color(0xFFFCF3DD),
+      200: Color(0xFFFEE6AF),
+      300: Color(0xFFFFC847),
+      400: Color(0xFFFFB300),
+      500: Color(0xFF8A6103),
     },
   );
 
@@ -46,6 +51,14 @@ class AppColors {
     300: Color(0xFF828282),
     200: Color(0xFF4F4F4F),
     100: Color(0xFF333333),
+  });
+
+  static const secondary = MaterialColor(0xFF282828, {
+    500: Color(0xFF666666),
+    400: Color(0xFF363636),
+    300: Color(0xFF313131),
+    200: Color(0xFF282828),
+    100: Color(0xFF171717),
   });
 
   static const errorColor = MaterialColor(0xFFe25c5c, {
